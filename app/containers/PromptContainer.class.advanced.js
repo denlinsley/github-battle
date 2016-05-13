@@ -1,24 +1,25 @@
 import React from 'react'
 import Prompt from '../components/Prompt'
 
-const PromptContainer = React.createClass ({
-  contextTypes: {
+// uses ES7 property initializers
+// requires babel-plugin-transform-class-properties
+// see https://babeljs.io/blog/2015/06/07/react-on-es6-plus
+class PromptContainer extends React.Component {
+  static contextTypes = {
     router: React.PropTypes.object.isRequired
-  },
+  }
 
-  getInitialState () {
-    return {
-      username: ''
-    }
-  },
+  state = {
+    username: ''
+  }
 
-  handleUpdateUser (e) {
+  handleUpdateUser = (e) => {
     this.setState({
       username: e.target.value
     })
-  },
+  }
 
-  handleSubmitUser (e) {
+  handleSubmitUser = (e) => {
     e.preventDefault()
     const username = e.target.value
     this.setState({
@@ -37,7 +38,7 @@ const PromptContainer = React.createClass ({
     } else {
       this.context.router.push(`/playerTwo/${this.state.username}`)
     }
-  },
+  }
 
   render () {
     return (
@@ -49,6 +50,6 @@ const PromptContainer = React.createClass ({
       />
     )
   }
-})
+}
 
 export default PromptContainer
