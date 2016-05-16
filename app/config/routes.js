@@ -5,11 +5,11 @@ import {
   IndexRoute,
   hashHistory
 } from 'react-router'
-// I kind of like separate framwwork from app imports (ng2 style guide)
+// I kind of like separating framwwork from app imports (from ng2 style guide)
 import Main from '../components/Main'
 import Home from '../components/Home'
-import Battle from '../components/Battle'
 import PromptContainer from '../containers/PromptContainer.class.constructor'
+import ConfirmBattleContainer from '../containers/ConfirmBattleContainer'
 
 const routes = (
   <Router history={hashHistory}>
@@ -17,7 +17,7 @@ const routes = (
       <IndexRoute component={Home} />
       <Route path="/playerOne" header="Player One" component={PromptContainer} />
       <Route path="/playerTwo/:playerOne" header="Player Two" component={PromptContainer} />
-      <Route path="/battle" component={Battle} />
+      <Route path="battle" component={ConfirmBattleContainer} />
     </Route>
   </Router>
 )
