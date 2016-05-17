@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../styles' 
+import MainContainer from './MainContainer' 
 
 class Home extends React.Component {
   constructor (props) {
@@ -13,13 +13,13 @@ class Home extends React.Component {
 
   render () {
     return (
-      <div className="jumbotron col-sm-6 col-sm-offset-3 text-center" style={styles.transparentBg}>
-      <h1>Github Battle</h1>
-      <p className="lead">What even is a jQuery?</p>
-      <button className="btn btn-success" onClick={this.handleClick}>
-        Get Started
-      </button>
-    </div>
+      <MainContainer>
+        <h1>Github Battle</h1>
+        <p className="lead">What even is a jQuery?</p>
+        <button className="btn btn-success" onClick={this.handleClick}>
+          Get Started
+        </button>
+      </MainContainer>
     )
   }
 }

@@ -1,25 +1,35 @@
 import React, { PropTypes } from 'react'
 import Results from '../components/Results'
+import githubHelpers from '../utils/githubHelpers'
 
 class ResultsContainer extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      playersInfo: this.context.router.state.playersInfo
+      isLoading: true,
+      scores: []
     }
+  }
+
+  componentDidMount () {
+    githubHelpers.battle(this.props.location.state.playersInfo)
+      .then(scores => {
+        this.setState({
+          isLoading: false,
+          scores
+        })
+      })
   }
 
   render () {
     return (
       <Results
-        playersInfo={this.state.playersInfo}
+        isLoading={this.state.isLoading}
+        playersInfo={this.props.location.state.playersInfo}
+        scores={this.state.scores}
       />
     )
   }
-}
-
-ResultsContainer.contextTypes = {
-  router: PropTypes.object.isRequired
 }
 
 export default ResultsContainer

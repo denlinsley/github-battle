@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
+import MainContainer from './MainContainer'
 import UserDetails from './UserDetails'
 import UserDetailsWrapper from './UserDetailsWrapper'
 import styles from '../styles'
@@ -11,7 +12,7 @@ function puke (object) {
 const ConfirmBattle = (props) => {
   return props.isLoading
     ? <p>Loading...</p>
-    : <div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
+    : <MainContainer>
         <h1>Confirm Battle</h1>
         <div className="col-sm-8 col-sm-offset-2">
           <UserDetailsWrapper header="Player One">
@@ -35,7 +36,7 @@ const ConfirmBattle = (props) => {
             </Link>
           </div>
         </div>
-      </div>
+      </MainContainer>
 }
 
 ConfirmBattle.propTypes = {

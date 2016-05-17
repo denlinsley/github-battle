@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react'
-import styles from '../styles' 
+import MainContainer from './MainContainer'
 
 // stateless functional component (a presentational component - just the UI)
 const Prompt = (props) => {
   return (
-    <div className="jumbotron col-sm-6 col-sm-offset-3 text-center" style={styles.transparentBg}>
+    <MainContainer>
       <h1>{props.header}</h1>
       <div className="col-sm-12">
         <form onSubmit={props.onSubmitUser}>
@@ -24,7 +24,7 @@ const Prompt = (props) => {
           </div>              
       </form>
       </div>
-    </div>
+    </MainContainer>
   )
 }
 
