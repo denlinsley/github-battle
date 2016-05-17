@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import ConfirmBattle from '../components/ConfirmBattle'
 import githubHelpers from '../utils/githubHelpers'
 
@@ -9,6 +9,7 @@ class ConfirmBattleContainer extends React.Component {
       isLoading: true,
       playersInfo: []
     }
+    this.handleInitiateBattle = this.handleInitiateBattle.bind(this)
   }
 
   componentDidMount () {
@@ -19,13 +20,23 @@ class ConfirmBattleContainer extends React.Component {
           isLoading: false, 
           playersInfo: [players[0], players[1]] 
         })
-      })
+      }) // no .bind(this)?
+  }
+
+  handleInitiateBattle () {
+    this.context.router.push({
+      pathname: '/results',
+      state: {
+        playersInfo: this.state.playersInfo
+      }
+    })
   }
 
   render () {
     return (
       <ConfirmBattle 
         isLoading={this.state.isLoading}
+        onInitiateBattle={this.handleInitiateBattle}
         playersInfo={this.state.playersInfo}
       />
     )
@@ -33,7 +44,7 @@ class ConfirmBattleContainer extends React.Component {
 }
 
 ConfirmBattleContainer.contextTypes = {
-  router: React.PropTypes.object.isRequired
+  router: PropTypes.object.isRequired
 }
 
 export default ConfirmBattleContainer

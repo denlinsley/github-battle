@@ -15,7 +15,7 @@ class Home extends React.Component {
     return (
       <div className="jumbotron col-sm-6 col-sm-offset-3 text-center" style={styles.transparentBg}>
       <h1>Github Battle</h1>
-      <p>What even is a jQuery?</p>
+      <p className="lead">What even is a jQuery?</p>
       <button className="btn btn-success" onClick={this.handleClick}>
         Get Started
       </button>
