@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
+import Loading from './Loading'
 import MainContainer from './MainContainer'
 import UserDetails from './UserDetails'
 import UserDetailsWrapper from './UserDetailsWrapper'
@@ -11,7 +12,7 @@ function puke (object) {
 
 const ConfirmBattle = (props) => {
   return props.isLoading
-    ? <p>Loading...</p>
+    ? <Loading text="Fetching github data" speed={800} />
     : <MainContainer>
         <h1>Confirm Battle</h1>
         <div className="col-sm-8 col-sm-offset-2">

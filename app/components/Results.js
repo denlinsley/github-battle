@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
+import Loading from './Loading'
 import MainContainer from './MainContainer'
 import UserDetails from './UserDetails'
 import UserDetailsWrapper from './UserDetailsWrapper'
 import styles from '../styles'
 
-// private functional stateless  (only used in this specific file)
+// private functional stateless component (only used in this specific file)
 const StartOver = () => {
   return (
     <div className="col-sm-12">
@@ -21,7 +22,7 @@ const StartOver = () => {
 const Results = (props) => {
   if (props.isLoading) {
     return (
-      <p>Loading...</p>
+      <Loading text="Hold the phone" speed={100} />
     )
   }
 

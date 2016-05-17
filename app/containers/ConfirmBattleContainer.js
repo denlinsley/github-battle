@@ -20,7 +20,7 @@ class ConfirmBattleContainer extends React.Component {
           isLoading: false, 
           playersInfo: [players[0], players[1]] 
         })
-      }) // no .bind(this)?
+      }) // no .bind(this) needed with arrow functions!
   }
 
   handleInitiateBattle () {
