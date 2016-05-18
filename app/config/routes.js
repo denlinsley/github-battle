@@ -8,7 +8,7 @@ import {
 // I kind of like separating framwwork from app imports (from ng2 style guide)
 import Main from '../components/Main'
 import Home from '../components/Home'
-import PromptContainer from '../containers/PromptContainer.class.constructor'
+import PromptContainer from '../containers/PromptContainer'
 import ConfirmBattleContainer from '../containers/ConfirmBattleContainer'
 import ResultsContainer from '../containers/ResultsContainer'
 

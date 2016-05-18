@@ -42,7 +42,9 @@ class Loading extends React.Component {
   render () {
     return (
       <div style={styles.container}>
-        <p style={styles.content}>{this.state.text}</p>
+        <p style={styles.content}>
+          {this.state.text}
+        </p>
       </div>
     )
   }

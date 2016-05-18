@@ -7,17 +7,15 @@ import UserDetailsWrapper from './UserDetailsWrapper'
 import styles from '../styles'
 
 // private functional stateless component (only used in this specific file)
-const StartOver = () => {
-  return (
-    <div className="col-sm-12">
-      <Link to="/playerOne">
-        <button className="btn btn-lg btn-info" style={styles.space}>
-          Start Over
-        </button>
-      </Link>
-    </div>
-  )
-}
+const StartOver = () => (
+  <div className="col-sm-12">
+    <Link to="/playerOne">
+      <button className="btn btn-lg btn-info" style={styles.space}>
+        Start Over
+      </button>
+    </Link>
+  </div>
+)
 
 const Results = (props) => {
   if (props.isLoading) {

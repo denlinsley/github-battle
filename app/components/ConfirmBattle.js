@@ -6,10 +6,6 @@ import UserDetails from './UserDetails'
 import UserDetailsWrapper from './UserDetailsWrapper'
 import styles from '../styles'
 
-function puke (object) {
-  return <pre>{JSON.stringify(object, null, 1)}</pre>
-}
-
 const ConfirmBattle = (props) => {
   return props.isLoading
     ? <Loading text="Fetching github data" speed={800} />
@@ -47,3 +43,4 @@ ConfirmBattle.propTypes = {
 }
 
 export default ConfirmBattle
+// if you export on the class itself you have to import as { Main }

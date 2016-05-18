@@ -1,12 +1,11 @@
 import React from 'react'
 import styles from '../styles'
 
-const MainContainer = (props) => {
-  return (
-    <div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
-      {props.children}
-    </div>
-  )
-}
+// terse syntax with arrow fn implicit return
+const MainContainer = ({ children }) => (
+  <div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
+    {children}
+  </div>
+)
 
 export default MainContainer
