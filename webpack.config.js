@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: __dirname + '/dist',
     filename: 'index_bundle.js',
-    // publicPath: '/'
+    // publicPath: '/' // plugins are aware of this
   },
   module: {
     loaders: [
@@ -15,6 +15,10 @@ module.exports = {
         test: /\.js$/, 
         exclude: /node_modules/, 
         loader: 'babel'
+      },
+      {
+        test: /\.css$/,
+        loader: 'style!css'
       }
     ]
   },
